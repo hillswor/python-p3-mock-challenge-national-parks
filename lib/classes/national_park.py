@@ -1,3 +1,6 @@
+from statistics import mode
+
+
 class NationalPark:
     def __init__(self, name):
         if isinstance(name, str):
@@ -23,4 +26,4 @@ class NationalPark:
         return len(self.trips())
 
     def best_visitor(self):
-        pass
+        return mode([trip.visitor for trip in self.trips()])
